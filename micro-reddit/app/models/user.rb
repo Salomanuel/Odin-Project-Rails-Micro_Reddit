@@ -1,5 +1,5 @@
 class User < ApplicationRecord
 
-	# validates :name, 	presence: true
-										# length: { minimum:4, maximux:12}
+	validates :name, 	presence: true,
+										length: { maximum:16 }
 end
