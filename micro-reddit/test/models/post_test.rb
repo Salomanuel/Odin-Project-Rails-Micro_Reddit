@@ -28,4 +28,9 @@ class PostTest < ActiveSupport::TestCase
 		@post.body = nil
 		assert_not @post.valid?
 	end
+
+	test "post should not be too long" do
+		@post.body = "a"*1000
+		assert_not @post.valid?
+	end
 end
