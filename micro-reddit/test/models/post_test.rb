@@ -13,4 +13,19 @@ class PostTest < ActiveSupport::TestCase
 		@post.user = nil
 		assert_not @post.valid?
 	end
+
+	test "it should have a title" do
+		@post.title = nil
+		assert_not @post.valid?
+	end
+
+	test "title shouldn't be too long" do
+		@post.title = "1"*30
+		assert_not @post.valid?
+	end
+
+	test "post should have a body" do
+		@post.body = nil
+		assert_not @post.valid?
+	end
 end
